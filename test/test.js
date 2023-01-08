@@ -22,6 +22,6 @@ describe('Show Error Message on Empty Input', () => {
             let text = await driver.findElement(webdriver.By.id('loginMessage')).getText();
             assert.equal(text, "Invalid email or password");
             driver.quit();
-            done();
+            // done();
     });
 })
