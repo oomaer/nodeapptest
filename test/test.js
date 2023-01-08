@@ -11,7 +11,7 @@ options.headless();
 const driver = new webdriver.Builder().setChromeOptions(options).forBrowser('chrome').build();
 
 describe('Show Error Message on Empty Input', () => {
-    it('should show error message', async () => {
+    it('should show error message', async (done) => {
         
             driver.get('https://web-production-b1d0.up.railway.app/');
             driver.findElement(webdriver.By.name('email')).sendKeys('');
@@ -22,5 +22,6 @@ describe('Show Error Message on Empty Input', () => {
             let text = await driver.findElement(webdriver.By.id('loginMessage')).getText();
             assert.equal(text, "Invalid email or password");
             driver.quit();
+            done();
     });
 })
