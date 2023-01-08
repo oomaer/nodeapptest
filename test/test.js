@@ -3,12 +3,22 @@ const webdriver = require('selenium-webdriver');
 const assert = require('assert');
 const chrome = require('selenium-webdriver/chrome');
 // const chromedriver = require('chromedriver');
+var chrome = require('selenium-webdriver/chrome');
+var path = require('chromedriver').path;
+
+var service = new chrome.ServiceBuilder(path).build();
+chrome.setDefaultService(service);
 
 
 options = new chrome.Options()
 options.headless();
 
-const driver = new webdriver.Builder().setChromeOptions(options).forBrowser('chrome').build();
+// const driver = new webdriver.Builder().setChromeOptions(options).forBrowser('chrome').build();
+var driver = new webdriver.Builder()
+.setChromeOptions(options)
+.withCapabilities(webdriver.Capabilities.chrome())
+.build();
+
 
 describe('Show Error Message on Empty Input', () => {
     it('should show error message', async (done) => {
