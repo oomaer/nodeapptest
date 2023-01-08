@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm install inherits && npm install selenium-webdriver && mocha --timeout 10000",
+    "build": "echo 'build successful'"
+  },
+  "devDependencies": {
+    "inherits": "^2.0.4",
+    "mocha": "^5.2.0",
+    "ms": "^2.1.1",
+    "selenium-webdriver": "^4.7.1"
+  }
+}
