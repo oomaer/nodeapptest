@@ -2,7 +2,7 @@
 const webdriver = require('selenium-webdriver');
 const assert = require('assert');
 const chrome = require('selenium-webdriver/chrome');
-const chromedriver = require('chromedriver');
+// const chromedriver = require('chromedriver');
 
 
 options = new chrome.Options()
